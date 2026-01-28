@@ -20,10 +20,14 @@
 // Front pages
 //
 
-#include "pages/titlepage.typ"
+#include "pages/newtitlepage.typ"
 
 #set page(numbering: "I", number-align: numbering-alignment)
 #counter(page).update(1)
+
+#include "pages/sperrvermerk.typ" //falls ein Sperrvermerk benötigt wird
+
+#pagebreak()
 
 #include "pages/reading-information.typ"
 #include "pages/declaration-of-authorship.typ"
@@ -78,7 +82,7 @@
 }
 
 //
-// Verzeichnisse
+// Verzeichnisse, ggfs. müssen sie auch vor das erste Kapitel, einfach dafür Ctrl+X und Ctrl+V nutzen
 //
 
 #context {

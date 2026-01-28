@@ -1,23 +1,37 @@
 #import "lib/shared-lib.typ": is-page-empty
 
 #let title = "Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen Höchstgeschwindigkeit von WARP 7"
-#let authors = ("Max Mustermann",) // Note: The array of length one needs a trailing comma, as in (1,).
+#let author = "Max Mustermann" // Note: The array of length one needs a trailing comma, as in (1,).
 #let date = datetime.today()
 
-#let logo-left = image("assets/TH_Mannheim_Logo_CMYK_blau.svg")
-#let logo-right = none
+#let kind = "PA2" // "Bachelor", "Master", "PA1", "PA2"
 
-#let degree = "Master" // "Bachelor"
-#let course = "Informatik"
-#let faculty = "Fakultät für Informatik"
-#let university = "Technische Hochschule Mannheim"
-#let supervisor-hs = "Prof. Peter Mustermann, Technische Hochschule Mannheim"
-#let supervisor-company = "Erika Mustermann, Paukenschlag GmbH"
+#let logo-left = image("assets/DHBW-Logo.svg")
+#let logo-right = image("assets/SVI-Logo.jpg")
+
+#let university = "DHBW Mannheim"
+#let program-director = "Prof. Dr. Anna Beispiel"
+#let field-of-study = "Wirtschaftsinformatik | Software Engineering"
+#let course-name = "XXX24XXX"
+#let matriculation-number = "1234567"
+
+#let company = "SV Informatik GmbH"
+#let company-department = "Softwareentwicklung - Abteilung Testing und Typst"
+
+#let supervisor-hs = "Prof. Peter Mustermann"
+#let supervisor-hs-email = "peter.mustermann@dhbw.de"
+#let supervisor-hs-phone = "+49 621 12341234"
+
+#let supervisor-company = "Erika Mustermann"
+#let supervisor-company-email = "erika.mustermann@sv-informatik.de"
+#let supervisor-company-phone = "+49 621 56785678"
+
+
 
 #let heading-font = "Latin Modern Sans" // like HSMA: "Arial"
 #let body-font = "New Computer Modern" // "libertinus serif"
 
-#let body-text-size = 12pt
+#let body-text-size = 11pt
 #let numbering-alignment = center
 
 // Workaround for "Using sub-files imported into main file, while citing a single bibliography."
@@ -29,9 +43,14 @@
 //
 
 #let template = body => {
-  set document(title:title, author: authors, date: date)
+  set document(title:title, author: author, date: date)
 
   set page(
+    margin: (
+      top:3.8cm,
+      bottom: 4.5cm,
+      x: 3cm,
+    ),
     number-align: numbering-alignment,
     // https://github.com/typst/templates/blob/main/wonderous-book/lib.typ#L91
     header: context {
@@ -78,7 +97,7 @@
   set par(justify: true, leading: 0.75em)
   show raw.where(block: true): set par(justify: false)
 
-  set figure.caption(separator: [ --- ], position: bottom)
+  set figure.caption(separator: [ -- ], position: bottom)
   show figure: set block(breakable: true)
 
   show heading.where(level: 1): it => {

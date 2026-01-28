@@ -48,7 +48,7 @@ Create figures or tables like this:
 
 === Figures
 
-#figure(caption: "Image Example", image(width: 4cm, "../assets/TH_Mannheim_Logo_CMYK_blau.svg"))
+#figure(caption: "Image Example", image(width: 4cm, "../assets/svi-logo.jpg"))<figure>
 
 === Tables
 
@@ -102,6 +102,59 @@ Insert code snippets like this:
 Cite like this #cite(form: "prose", <iso18004>). Or like this @iso18004. You can also reference by adding `<ref>` with the desired name after figures or headings. For example this @table references the table on the previous page.
 
 Or you can link to @appendix-long.
+
+== Text Formatting
+
+Of course you can make text *bold* or _italic_. #text(size: 20pt)[And you can make text huge.] #underline[Underlining works too!] #overline[And overlining as well!] #text(fill: red)[We can also color the text.] #text(weight: "bold")[Bold works this way too.] #text(style: "italic")[Italic also works like this.] `Monospace text` also works inline.
+
+// Strikethrough
+#strike[strikethrough text]
+
+// Small Caps
+#smallcaps[Small Caps Text]
+
+// Subscript and Superscript
+H#sub[2]O and x#super[2]
+
+// Combinations
+*_bold and italic_* or #text(fill: blue, size: 14pt)[*blue, large and bold*]
+
+// Different fonts
+#text(font: "Times New Roman")[Times New Roman]
+#text(font: "Comic Sans MS")[Comic Sans]
+#text(font: "Courier New")[Courier New]
+
+// Letter spacing
+#text(tracking: 10pt)[spaced out]
+
+// Line spacing
+#set par(leading: 1.5em)
+Text with larger line spacing.
+
+// Background color
+#highlight[highlighted text]
+#highlight(fill: yellow)[highlighted in yellow]
+
+// Text in box
+#box(fill: luma(230), inset: 5pt)[Text in gray box]
+
+#v(2em)
+
+// Rotation
+#rotate(45deg)[rotated text]
+
+#v(2em)
+
+// Scaling
+#scale(x: 150%)[horizontally stretched]
+
+#v(2em)
+
+#par(leading: 2em)[
+  This text has larger line spacing. \
+  Multiple lines are formatted accordingly.
+]
+
 
 = Conclusion
 
