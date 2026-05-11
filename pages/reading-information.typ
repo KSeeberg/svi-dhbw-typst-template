@@ -2,15 +2,17 @@
 
 #heading(outlined: false, "Lesehinweise")
 
-#let thesis-degree = "Wissenschaftliche Arbeit";
+#let thesis-degree = "Wissenschaftliche Arbeit"
 
-#{if kind == "Bachelor"{
-    thesis-degree = "Bachelorarbeit";} 
-  else if kind == "Master"{
-    thesis-degree = "Masterarbeit";}
-  else {
-    thesis-degree = "Projektarbeit";
-  }}
+#{
+  if kind == "Bachelor" {
+    thesis-degree = "Bachelorarbeit"
+  } else if kind == "Master" {
+    thesis-degree = "Masterarbeit"
+  } else {
+    thesis-degree = "Projektarbeit"
+  }
+}
 
 #v(1em)
 
@@ -18,8 +20,6 @@ Die folgenden Hinweise sollen das Lesen dieser #thesis-degree erleichtern und sp
 - Aus Gründen der besseren Lesbarkeit wird in dieser #thesis-degree auf die gleichzeitige Verwendung weiblicher und männlicher Sprachformen verzichtet. Sämtliche Personenbezeichnungen gelten gleichwohl für alle Geschlechter. In der vorliegenden Arbeit wird das generische Maskulinum verwendet.
 - Um eine bessere Übersichtlichkeit zu erzielen, wird nach jedem Hauptkapitel eine neue Seite begonnen.
 - Quellcode, Dateinamen oder Konsolenbefehle werden in `Schreibmaschinenschrift` geschrieben bzw. in einer anderen Farbe hervorgehoben (z.B. ``` if count > 10``` ).
-
-//Kommentar zur Schreibmaschinenschrift: Mit ``` if count > 10``` wird der Code in Schreibmaschinenschrift dargestellt. Mit ```<programmiersprache> if count > 10``` (z.B.: ```python if count > 10```) wird die Schrift zusätzlich farblich hervorgehoben und formatiert. Allerdings ist das oft ungern gesehen in wissenschaftlichen Arbeiten, daher nur wenn es wirklich nötig ist.
 
 #v(1em)
 

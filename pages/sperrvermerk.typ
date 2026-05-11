@@ -1,5 +1,3 @@
-#import "@preview/codelst:2.0.2": *
-
 #import "../template.typ": *
 
 #context bib_state.get()

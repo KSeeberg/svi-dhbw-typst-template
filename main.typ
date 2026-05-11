@@ -82,7 +82,7 @@
 }
 
 //
-// Verzeichnisse, ggfs. müssen sie auch vor das erste Kapitel, einfach dafür Ctrl+X und Ctrl+V nutzen
+// Verzeichnisse
 //
 
 #context {
@@ -100,12 +100,9 @@
 #context {
   let images = query(figure.where(kind: image))
 
-  if (images.len() > 0) {
+  if images.len() > 0 {
     heading("Abbildungsverzeichnis", supplement: none)
-    outline(
-      title: none,
-      target: figure.where(kind: image),
-    )
+    outline(title: none, target: figure.where(kind: image))
     pagebreak(weak: true)
   }
 }
@@ -113,31 +110,25 @@
 #context {
   let tables = query(figure.where(kind: table))
 
-  if (tables.len() > 0) {
+  if tables.len() > 0 {
     heading("Tabellenverzeichnis", supplement: none)
-    outline(
-      title: none,
-      target: figure.where(kind: table),
-    )
+    outline(title: none, target: figure.where(kind: table))
     pagebreak(weak: true)
   }
 }
 
 #context {
-  let tables = query(figure.where(kind: table))
+  let code-blocks = query(figure.where(kind: raw))
 
-  if (tables.len() > 0) {
+  if code-blocks.len() > 0 {
     heading("Quellcodeverzeichnis", supplement: none)
-    outline(
-      title: none,
-      target: figure.where(kind: raw),
-    )
+    outline(title: none, target: figure.where(kind: raw))
     pagebreak(weak: true)
   }
 }
 
 #context {
-  heading("Hilfsmittelverzeichnis", supplement: none) // List of Tools and Resources
+  heading("Hilfsmittelverzeichnis", supplement: none)
   include "pages/tools-and-resources.typ"
   pagebreak(weak: true)
 }

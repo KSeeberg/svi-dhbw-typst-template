@@ -4,10 +4,15 @@
 
 #table(
   columns: (1fr, 3fr),
-  inset:7pt,
+  inset: 7pt,
   stroke: none,
-  table.header([#text(weight: "bold","Titel:")], [#title],[#text(weight: "bold","Verfasserin:")],[#author],[#text(weight: "bold","Kurs:")],[#course-name],[#text(weight: "bold","Unternehmen:")], [#company])
-  )
+  table.header(
+    [*Titel:*],       [#title],
+    [*Verfasserin:*], [#author],
+    [*Kurs:*],        [#course-name],
+    [*Unternehmen:*], [#company],
+  ),
+)
 
 #lorem(80)
 

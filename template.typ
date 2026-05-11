@@ -26,8 +26,6 @@
 #let supervisor-company-email = "erika.mustermann@sv-informatik.de"
 #let supervisor-company-phone = "+49 621 56785678"
 
-
-
 #let heading-font = "Latin Modern Sans" // like HSMA: "Arial"
 #let body-font = "New Computer Modern" // "libertinus serif"
 
@@ -80,7 +78,6 @@
       }
       header-txt += heading-last.body
 
-      // set text(style: "italic", weight: "semibold", 1em)
       set align(center)
       stack(
         dir: ttb,
