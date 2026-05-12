@@ -1,18 +1,10 @@
 #import "@preview/codelst:2.0.2": *
 
-#import "../lib/acronym-lib.typ": acr, acrpl, acrs, acrspl, acrl, acrlpl, acrf, acrfpl
-#import "../lib/glossary-lib.typ": gls
+#import "../../lib/acronym-lib.typ": acr, acrpl, acrs, acrspl, acrl, acrlpl, acrf, acrfpl
+#import "../../lib/glossary-lib.typ": gls
 
-#import "../template.typ": *
+#import "../../template.typ": *
 #context bib_state.get()
-
-= Introduction
-
-#lorem(100)
-
-#lorem(100)
-
-#lorem(100)
 
 = Examples
 
@@ -48,7 +40,7 @@ Create figures or tables like this:
 
 === Figures
 
-#figure(caption: "Image Example", image(width: 4cm, "../assets/svi-logo.jpg"))<figure>
+#figure(caption: "Image Example", image(width: 4cm, "../../assets/svi-logo.jpg"))<figure>
 
 === Tables
 
@@ -143,12 +135,3 @@ Text with larger line spacing.
   This text has larger line spacing. \
   Multiple lines are formatted accordingly.
 ]
-
-
-= Conclusion
-
-#lorem(100)
-
-#lorem(120)
-
-#lorem(80)

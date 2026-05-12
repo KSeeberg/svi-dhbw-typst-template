@@ -1,7 +1,15 @@
-# HSMA Typst Template
+# SVI-DHBW Typst Template
 
-Compile the template with the following command:
+Template mit folgendem Befehl kompilieren:
 
 ```
 typst compile --font-path ./assets/fonts/ ./main.typ
 ```
+
+
+Kompilierung mit folgendem Befehl beobachten (für Fehlerbehebung):
+
+```
+typst watch --font-path ./assets/fonts/ ./main.typ
+```
+

@@ -58,7 +58,7 @@
     it
   }
 
-  include "pages/chapters.typ"
+  include "pages/chapters/_index.typ"
 
   pagebreak(weak: true)
 }
