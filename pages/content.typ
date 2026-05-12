@@ -37,6 +37,16 @@ Create bullet lists or numbered lists.
 + works with
 + numbered lists!
 
+== Paragraphs
+
+You can create paragraphs with level 4 headings:
+
+==== Some title
+#lorem(25)
+
+==== This is another title
+#lorem(50)
+
 == Figures and Tables
 
 Create figures or tables like this:
@@ -84,7 +94,7 @@ Insert code snippets like this:
 
   export default ReactComponent;
   ```],
-)
+) <code>
 
 #pagebreak()
 
@@ -93,6 +103,11 @@ Insert code snippets like this:
 Cite like this #cite(form: "prose", <iso18004>). Or like this @iso18004. You can also reference by adding `<ref>` with the desired name after figures or headings. For example this @table references the table on the previous page.
 
 Or you can link to @appendix-long.
+
+You can also cite URLs with Vergleiche with `#flcite`. #flcite(date: datetime(year: 2026, month: 05, day: 12), url: "https://google.com")
+
+You can dynamically reference with `#distref(<ref>)`: #distref(<code>). This is close to the page is therefore not page number is shown.
+But #distref(<appendix-long>) is far away, and therefore the page number is shown. Some scientific advisors want this.
 
 == Text Formatting
 
