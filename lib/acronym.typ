@@ -1,4 +1,4 @@
-#import "shared-lib.typ" : display, display-link, check-in-dict
+#import "common.typ": check-in-dict, display, display-link
 
 #let prefix = "acronym-state-"
 #let acros = state("acronyms", none)
@@ -32,7 +32,11 @@
       }
     } else if type(defs) == "array" {
       if defs.len() == 0 {
-        panic("No definitions found for acronym " + acr + ". Make sure it is defined in the dictionary passed to #init-acronyms(dict)")
+        panic(
+          "No definitions found for acronym "
+            + acr
+            + ". Make sure it is defined in the dictionary passed to #init-acronyms(dict)",
+        )
       }
       if plural {
         if defs.len() == 1 {
@@ -40,13 +44,17 @@
         } else if defs.len() == 2 {
           display("acronyms", acros, acr, defs.at(1), link: link)
         } else {
-          panic("Definitions should be arrays of one or two strings. Definition of " + acr + " is: " + type(defs))
+          panic(
+            "Definitions should be arrays of one or two strings. Definition of " + acr + " is: " + type(defs),
+          )
         }
       } else {
         display("acronyms", acros, acr, defs.at(0), link: link)
       }
     } else {
-      panic("Definitions should be arrays of one or two strings. Definition of " + acr + " is: " + type(defs))
+      panic(
+        "Definitions should be arrays of one or two strings. Definition of " + acr + " is: " + type(defs),
+      )
     }
   }
 }
@@ -109,7 +117,7 @@
 
     for acr in acr-list {
       grid(
-        columns: (max-width + 0.5em, auto),
+        columns: (max-width + 0.75em, auto),
         gutter: acronym-spacing,
         [*#acr#label("acronyms-" + acr)*], [#acrl(acr, link: false)],
       )

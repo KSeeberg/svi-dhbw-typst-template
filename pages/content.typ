@@ -1,10 +1,17 @@
 #import "@preview/codelst:2.0.2": *
 
-#import "../../lib/acronym-lib.typ": acr, acrpl, acrs, acrspl, acrl, acrlpl, acrf, acrfpl
-#import "../../lib/glossary-lib.typ": gls
+#import "../lib/common.typ": distref, flcite
+#import "../lib/acronym.typ": acr, acrlpl, acrpl, acrs
 
-#import "../../template.typ": *
+#set heading(numbering: "1.1") // To prevent a linter error
+
+#import "../template.typ": *
 #context bib_state.get()
+
+= Introduction
+
+#lorem(100)
+
 
 = Examples
 
@@ -17,10 +24,6 @@ Use the `acr` function to insert acronyms, which looks like this #acr("HTTP") th
 #acrlpl("API") are used to define the interaction between different software systems.
 
 #acrs("REST") (`acrs` for short form) is an architectural style for networked applications.
-
-== Glossary
-
-Use the `gls` function to insert glossary terms, which looks like this: A #gls("Vulnerability") is a weakness in a system that can be exploited.
 
 == Lists
 
@@ -40,7 +43,7 @@ Create figures or tables like this:
 
 === Figures
 
-#figure(caption: "Image Example", image(width: 4cm, "../../assets/svi-logo.jpg"))<figure>
+#figure(caption: "Image Example", image(width: 4cm, "../assets/svi-logo.jpg"))<figure>
 
 === Tables
 
@@ -50,11 +53,7 @@ Create figures or tables like this:
     columns: (1fr, 50%, auto),
     inset: 10pt,
     align: horizon,
-    table.header(
-      [],
-      [*Area*],
-      [*Parameters*],
-    ),
+    table.header([], [*Area*], [*Parameters*]),
 
     text("cylinder.svg"),
     $ pi h (D^2 - d^2) / 4 $,
@@ -75,16 +74,16 @@ Insert code snippets like this:
 #figure(
   caption: "Codeblock Example",
   sourcecode[```ts
-    const ReactComponent = () => {
-      return (
-        <div>
-          <h1>Hello World</h1>
-        </div>
-      );
-    };
+  const ReactComponent = () => {
+    return (
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    );
+  };
 
-    export default ReactComponent;
-    ```],
+  export default ReactComponent;
+  ```],
 )
 
 #pagebreak()
@@ -135,3 +134,7 @@ Text with larger line spacing.
   This text has larger line spacing. \
   Multiple lines are formatted accordingly.
 ]
+
+= Conclusion
+
+#lorem(100)

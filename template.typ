@@ -1,51 +1,58 @@
-#import "lib/shared-lib.typ": is-page-empty
+#import "lib/common.typ": is-page-empty
 
 #let title = "Einsatz eines Flux-Kompensators für Zeitreisen mit einer maximalen Höchstgeschwindigkeit von WARP 7"
-#let author = "Max Mustermann" // Note: The array of length one needs a trailing comma, as in (1,).
+#let authors = (
+  "Max Mustermann",
+) // Note: The array of length one needs a trailing comma, as in (1,).
+#let matriculation-numbers = (
+  "1234567",
+)
 #let date = datetime.today()
 
 #let kind = "PA2" // "Bachelor", "Master", "PA1", "PA2"
 
-#let logo-left = image("assets/DHBW-Logo.svg")
-#let logo-right = image("assets/SVI-Logo.jpg")
+#let logo-left = image("assets/dhbw-logo.svg")
+#let logo-right = image("assets/svi-logo.jpg")
 
 #let university = "DHBW Mannheim"
 #let program-director = "Prof. Dr. Anna Beispiel"
 #let field-of-study = "Wirtschaftsinformatik | Software Engineering"
 #let course-name = "XXX24XXX"
-#let matriculation-number = "1234567"
 
 #let company = "SV Informatik GmbH"
 #let company-department = "Softwareentwicklung - Abteilung Testing und Typst"
 
-#let supervisor-hs = "Prof. Peter Mustermann"
-#let supervisor-hs-email = "peter.mustermann@dhbw.de"
-#let supervisor-hs-phone = "+49 621 12341234"
+#let scientific-advisor = "Prof. Peter Mustermann"
+#let scientific-advisor-email = "peter.mustermann@dhbw.de"
+#let scientific-advisor-phone = "+49 621 12341234"
 
-#let supervisor-company = "Erika Mustermann"
-#let supervisor-company-email = "erika.mustermann@sv-informatik.de"
-#let supervisor-company-phone = "+49 621 56785678"
+#let company-department = "XYZ1"
+#let company-supervisor = "Erika Mustermann"
+#let company-supervisor-mail = "erika.mustermann@sv-informatik.de"
+#let company-supervisor-phone = "+49 621 56785678"
 
-#let heading-font = "Latin Modern Sans" // like HSMA: "Arial"
+#let heading-font = "New Computer Modern" // "New Computer Modern" for LaTeX look, "Latin Modern Sans" or like HSMA: "Arial"
 #let body-font = "New Computer Modern" // "libertinus serif"
 
-#let body-text-size = 11pt
+#let timeframe = "17.11.2025 bis 16.02.2026"
+
+#let body-text-size = 12pt
 #let numbering-alignment = center
 
 // Workaround for "Using sub-files imported into main file, while citing a single bibliography."
 // https://www.reddit.com/r/typst/comments/12pdmzc/using_subfiles_imported_into_main_file_while/?rdt=58657
-#let bib_state = state("bib_state", bibliography("sources.bib", title: none))
+#let bib_state = state("bib_state", bibliography("literature.bib", title: none))
 
 //
 // Template
 //
 
 #let template = body => {
-  set document(title:title, author: author, date: date)
+  set document(title: title, author: authors.join(", "), date: date)
 
   set page(
     margin: (
-      top:3.8cm,
+      top: 3.8cm,
       bottom: 4.5cm,
       x: 3cm,
     ),
@@ -91,8 +98,13 @@
   show heading: set text(weight: "semibold", font: heading-font)
   set text(font: body-font, lang: "de", body-text-size)
 
-  set par(justify: true, leading: 0.75em)
-  show raw.where(block: true): set par(justify: false)
+  set enum(spacing: 1.5em)
+  set par(justify: true, leading: 1.5em, spacing: 1.5em)
+  show raw.where(block: true): set par(
+    justify: false,
+    leading: 1.25em,
+    spacing: 1.25em,
+  )
 
   set figure.caption(separator: [ -- ], position: bottom)
   show figure: set block(breakable: true)
@@ -102,9 +114,19 @@
   }
   show heading.where(level: 2): it => v(1.25em) + it + v(0.75em)
   show heading.where(level: 3): it => v(1em) + it + v(0.65em)
+
+  // Make the fourth level act like LaTeX \paragraph
+  show heading.where(level: 4): it => {
+    v(1em) + block(below: 0pt) + box(strong(it.body)) + h(0.5em)
+  }
+  /*
+  If you want "normal" heading levels, use this:
   show heading.where(level: 4): it => v(1em) + it + v(0.65em)
   show heading.where(level: 5): it => v(1em) + it + v(0.65em)
   show heading.where(level: 6): it => v(1em) + it + v(0.65em)
+  */
+
+  show figure.where(kind: raw): set figure(supplement: [Quellcode])
 
   body
 }

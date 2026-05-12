@@ -1,4 +1,4 @@
-#import "../template.typ": author, date, title
+#import "../template.typ": authors, date, title
 
 #heading(outlined: false, "Ehrenwörtliche Erklärung")
 
@@ -8,10 +8,14 @@ Hiermit versichere ich, dass ich die vorliegende Arbeit mit dem Thema "#text(sty
 
 #v(1em)
 
-#text("Ort, " + date.display("[day].[month].[year]"))
+#text("Mannheim, " + date.display("[day].[month].[year]"))
 
 #v(0.8em)
 
 #align(left, image("../assets/unterschrift.png", height: 1cm))
+
+#for author in authors [
+  #align(left, text(author))
+]
 
 #pagebreak(weak: true)
