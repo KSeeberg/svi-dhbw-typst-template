@@ -53,7 +53,12 @@ Create figures or tables like this:
 
 === Figures
 
-#figure(caption: "Image Example", image(width: 4cm, "../assets/svi-logo.jpg"))<figure>
+#figure(
+  caption: "Image Example",
+  image(width: 4cm, "../assets/svi-logo.jpg"),
+) <figure-bla-bla>
+
+Here I'm referencing the figure: @figure-bla-bla.
 
 === Tables
 

@@ -98,6 +98,7 @@
   show heading: set text(weight: "semibold", font: heading-font)
   set text(font: body-font, lang: "de", body-text-size)
 
+  // Zeilenabstand
   set enum(spacing: 1.5em)
   set par(justify: true, leading: 1.5em, spacing: 1.5em)
   show raw.where(block: true): set par(
