@@ -1,5 +1,5 @@
 # SVI-DHBW Typst Template
-**Template for dual study students at SV Informatik**
+**Template for dual students at SV Informatik**
 
 ## For Linux/Mac
 Compile the template with the following command:
