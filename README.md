@@ -1,29 +1,24 @@
 # SVI-DHBW Typst Template
+**Template for dual study students at SV Informatik**
 
-## Für Linux/Mac
-
-Template mit folgendem Befehl kompilieren:
-
+## For Linux/Mac
+Compile the template with the following command:
 ```sh
 make
 ```
 
-Kompilierung mit folgendem Befehl beobachten (für Fehlerbehebung):
-
+Watch the compilation process for debugging:
 ```sh
 make watch
 ```
 
-## Für Windows
-
-Template mit folgendem Befehl kompilieren:
-
+## For Windows
+Compile the template with the following command:
 ```sh
 typst compile --font-path ./assets/fonts/ ./main.typ
 ```
 
-Kompilierung mit folgendem Befehl beobachten (für Fehlerbehebung):
-
+Watch the compilation process for debugging:
 ```sh
 typst watch --font-path ./assets/fonts/ ./main.typ
 ```
