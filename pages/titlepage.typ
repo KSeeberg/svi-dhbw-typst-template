@@ -209,6 +209,17 @@
           size: 12pt,
           font: heading-font,
         )[#timeframe],
+
+        text(
+          weight: "semibold",
+          size: 12pt,
+          font: heading-font,
+        )[Abgabedatum:],
+        text(
+          weight: "regular",
+          size: 12pt,
+          font: heading-font,
+        )[#submission-date],
       ),
     )],
 )

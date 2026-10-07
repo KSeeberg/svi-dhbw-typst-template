@@ -34,7 +34,8 @@
 #let heading-font = "New Computer Modern" // "New Computer Modern" for LaTeX look, "Latin Modern Sans" or like HSMA: "Arial"
 #let body-font = "New Computer Modern" // "libertinus serif"
 
-#let timeframe = "17.11.2025 bis 16.02.2026"
+#let timeframe = "12 Wochen"
+#let submission-date = "xx.xx.20xx"
 
 #let body-text-size = 12pt
 #let numbering-alignment = center
