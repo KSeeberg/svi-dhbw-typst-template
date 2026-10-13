@@ -101,6 +101,8 @@ Insert code snippets like this:
   ```],
 ) <code>
 
+Or inline like this: `hello world!` 
+
 #pagebreak()
 
 == References

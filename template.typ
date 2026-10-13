@@ -108,6 +108,15 @@
     spacing: 1.25em,
   )
 
+  // Inline-Code mit hellgrauem Hintergrund
+  show raw.where(block: false): it => box(
+    fill: luma(240),
+    inset: (x: 3pt, y: 0pt),
+    outset: (y: 3pt),
+    radius: 2pt,
+    it,
+  )
+
   set figure.caption(separator: [ -- ], position: bottom)
   show figure: set block(breakable: true)
 
