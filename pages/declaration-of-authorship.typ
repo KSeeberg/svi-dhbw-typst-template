@@ -12,7 +12,7 @@ Hiermit versichere ich, dass ich die vorliegende Arbeit mit dem Thema "#text(sty
 
 #v(0.8em)
 
-#align(left, image("../assets/unterschrift.png", height: 1cm))
+#align(left, image("../assets/unterschrift.png", height: 2cm))
 
 #for author in authors [
   #align(left, text(author))

@@ -113,7 +113,7 @@
 // Anhang //
 #context {
   counter(heading).update(0)
-  set heading(numbering: "A", supplement: [Anhang])
+  set heading(numbering: "A.1", supplement: [Anhang])
   show heading.where(level: 1): it => {
     pagebreak() // Ensure each main section starts on a new page
     v(2em, weak: true)

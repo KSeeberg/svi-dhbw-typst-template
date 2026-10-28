@@ -11,8 +11,8 @@
 
 #let kind = "PA2" // "Bachelor", "Master", "PA1", "PA2"
 
-#let logo-left = image("assets/dhbw-logo.svg")
-#let logo-right = image("assets/svi-logo.jpg")
+#let logo-left = image("assets/DHBW-Logo.png")
+#let logo-right = image("assets/sv_informatik-logo.png")
 
 #let university = "DHBW Mannheim"
 #let program-director = "Prof. Dr. Anna Beispiel"
@@ -26,7 +26,6 @@
 #let scientific-advisor-email = "peter.mustermann@dhbw.de"
 #let scientific-advisor-phone = "+49 621 12341234"
 
-#let company-department = "XYZ1"
 #let company-supervisor = "Erika Mustermann"
 #let company-supervisor-mail = "erika.mustermann@sv-informatik.de"
 #let company-supervisor-phone = "+49 621 56785678"
@@ -37,7 +36,7 @@
 #let timeframe = "12 Wochen"
 #let submission-date = "xx.xx.20xx"
 
-#let body-text-size = 12pt
+#let body-text-size = 11pt
 #let numbering-alignment = center
 
 // Workaround for "Using sub-files imported into main file, while citing a single bibliography."
@@ -97,11 +96,15 @@
   )
 
   show heading: set text(weight: "semibold", font: heading-font)
-  set text(font: body-font, lang: "de", body-text-size)
+  show heading.where(level: 1): set text(size: 1.4em)
+  show heading.where(level: 2): set text(size: 1.2em)
+  show heading.where(level: 3): set text(size: 1.1em)
+  show heading.where(level: 4): set text(size: 1.1em)
+  set text(font: body-font, lang: "de", body-text-size, region: "DE")
 
   // Zeilenabstand
-  set enum(spacing: 1.5em)
-  set par(justify: true, leading: 1.5em, spacing: 1.5em)
+  set enum(spacing: 1.2em)
+  set par(justify: true, leading: 1.2em, spacing: 1.2em)
   show raw.where(block: true): set par(
     justify: false,
     leading: 1.25em,
@@ -118,24 +121,14 @@
   )
 
   set figure.caption(separator: [ -- ], position: bottom)
-  show figure: set block(breakable: true)
+  show figure: set block(breakable: true, above: 1.75em, below: 1.75em)
 
   show heading.where(level: 1): it => {
     it + v(1em)
   }
-  show heading.where(level: 2): it => v(1.25em) + it + v(0.75em)
-  show heading.where(level: 3): it => v(1em) + it + v(0.65em)
-
-  // Make the fourth level act like LaTeX \paragraph
-  show heading.where(level: 4): it => {
-    v(1em) + block(below: 0pt) + box(strong(it.body)) + h(0.5em)
-  }
-  /*
-  If you want "normal" heading levels, use this:
-  show heading.where(level: 4): it => v(1em) + it + v(0.65em)
-  show heading.where(level: 5): it => v(1em) + it + v(0.65em)
-  show heading.where(level: 6): it => v(1em) + it + v(0.65em)
-  */
+  show heading.where(level: 2): it => v(0.65em) + it + v(0.65em)
+  show heading.where(level: 3): it => v(0.65em) + it + v(0.65em)
+  show heading.where(level: 4): it => v(0.65em) + it + v(0.65em)
 
   show figure.where(kind: raw): set figure(supplement: [Quellcode])
 

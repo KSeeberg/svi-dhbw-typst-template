@@ -18,12 +18,12 @@
     logo-left
   },
   if logo-right != none {
-    set image(height: 1.7cm)
+    set image(height: 2.5cm)
     logo-right
   },
 )
 
-#v(4em)
+#v(1.2em)
 
 #hrule
 #v(0.5em)
@@ -44,7 +44,7 @@
 #v(0.5em)
 #hrule
 
-#v(2em)
+#v(0.6em)
 
 // #for author in authors [
 //   #align(center, text(weight: "semibold", author))
@@ -56,7 +56,7 @@
   center,
   if kind == "Bachelor" {
     par(leading: 0.8em)[
-      #text(weight: "semibold")[Bachelor-Thesis] \
+      #text(size: 17pt, weight: "semibold")[Bachelor-Thesis] \
       #text(
         size: 12pt,
       )[zur Erlangung des akademischen Grades Bachelor of Science (B.Sc.)] \

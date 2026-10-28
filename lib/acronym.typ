@@ -30,7 +30,7 @@
       } else {
         display("acronyms", acros, acr, defs, link: link)
       }
-    } else if type(defs) == "array" {
+    } else if type(defs) == array {
       if defs.len() == 0 {
         panic(
           "No definitions found for acronym "
